@@ -25,31 +25,31 @@ AS
 -- Question 1i
 CREATE VIEW q1i(namefirst, namelast, birthyear)
 AS
-  SELECT 1, 1, 1 -- replace this line
+  SELECT namefirst, namelast, birthyear FROM people where weight>300-- replace this line
 ;
 
 -- Question 1ii
 CREATE VIEW q1ii(namefirst, namelast, birthyear)
 AS
-  SELECT 1, 1, 1 -- replace this line
+  SELECT namefirst, namelast, birthyear FROM people  WHERE namefirst like '% %' ORDER BY namefirst ASC ;-- replace this line
 ;
 
 -- Question 1iii
 CREATE VIEW q1iii(birthyear, avgheight, count)
 AS
-  SELECT 1, 1, 1 -- replace this line
+  SELECT birthyear, avg(height) AS avgheight, count(*) AS count FROM people  GROUP BY birthyear ORDER BY birthyear;-- replace this line
 ;
 
 -- Question 1iv
 CREATE VIEW q1iv(birthyear, avgheight, count)
 AS
-  SELECT 1, 1, 1 -- replace this line
+SELECT birthyear, avgheight, count  FROM (SELECT birthyear, avg(height) AS avgheight, count(*) AS count FROM people   GROUP BY birthyear ORDER BY birthyear) WHERE avgheight >70;
 ;
 
 -- Question 2i
 CREATE VIEW q2i(namefirst, namelast, playerid, yearid)
 AS
-  SELECT 1, 1, 1, 1 -- replace this line
+SELECT birthyear, avgheight, count  FROM ( SELECT birthyear, avg(height) AS avgheight, count(*) AS count FROM people  GROUP BY birthyear ORDER BY birthyear) WHERE avgheight>70 GROUP BY birthyear ORDER BY birthyear;-- replace this line
 ;
 
 -- Question 2ii
